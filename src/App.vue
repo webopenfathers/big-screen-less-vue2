@@ -8,7 +8,7 @@
           <img src="./assets/ksh32.png" alt="" />
           <img src="./assets/ksh32.png" alt="" />
         </div>
-        <div class="header-center text-gradient">容灾作战大厅</div>
+        <div class="header-center text-gradient">DR作战大厅</div>
         <div class="header-right">
           <img src="./assets/ksh32.png" alt="" />
           <!-- 年月日 -->
