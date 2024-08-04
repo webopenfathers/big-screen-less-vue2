@@ -37,7 +37,6 @@ export default {
   left: 50%;
   z-index: 999;
   border-radius: 8px;
-
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
