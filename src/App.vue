@@ -66,7 +66,10 @@
           </div>
         </div>
       </div>
-      <alertAlarm :show="isShow" @close="isShow = false"></alertAlarm>
+      <!-- 过度动画 -->
+      <transition name="fade">
+        <alertAlarm v-if="isShow" @close="isShow = false"></alertAlarm>
+      </transition>
     </div>
   </div>
 </template>
@@ -112,9 +115,6 @@ export default {
     }, 1000)
   },
   methods: {
-    changeShow() {
-      this.isShow = true
-    },
     //获取年月日的方法
     getYearMonthDay() {
       const today = new Date()
@@ -340,5 +340,13 @@ body {
 
 img {
   .px2vw(width, 310);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

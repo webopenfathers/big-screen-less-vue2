@@ -18,6 +18,8 @@
       <p>Item 2</p>
       <p>Item 3</p>
     </div>
+
+    <button @click="$router.push()">调换列表动画</button>
   </div>
 </template>
 <script>

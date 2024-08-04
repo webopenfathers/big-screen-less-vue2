@@ -21,65 +21,23 @@
   </div>
 </template>
 <script>
-import $ from 'jquery'
 export default {
   data() {
     return {}
-  },
-
-  props: {
-    show: Boolean,
-    default: () => false,
-  },
-
-  watch: {
-    show: {
-      handler(val) {
-        if (val) {
-          this.$nextTick(() => {
-            $('.filterbg').show()
-            $('.carInfo').show()
-            $('.carInfo').width('3px')
-            $('.carInfo').animate({ height: '50%' }, 400, function () {
-              $('.carInfo').animate({ width: '55%' }, 400)
-            })
-            setTimeout(function () {
-              $('.infoBox').show()
-              $('.carClose').css('display', 'block')
-            }, 800)
-          })
-        } else {
-          this.$nextTick(() => {
-            $('.carClose').css('display', 'none')
-            $('.infoBox').hide()
-            $('.carInfo').animate({ width: '3px' }, 400, function () {
-              $('.carInfo').animate({ height: 0 }, 400)
-            })
-
-            setTimeout(function () {
-              $('.filterbg').hide()
-              $('.carInfo').hide()
-              $('.carInfo').width(0)
-            }, 800)
-          })
-        }
-      },
-      immediate: true,
-    },
   },
 }
 </script>
 <style scoped lang="less">
 .carInfo {
-  width: 0;
-  height: 0;
+  width: 55%;
+  height: 50%;
   background: #061f3e;
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 999;
   border-radius: 8px;
-  display: none;
+
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -96,7 +54,7 @@ export default {
   position: absolute;
   top: -22px;
   right: -22px;
-  display: none;
+
   transition: 0.3s;
 }
 
@@ -112,7 +70,6 @@ export default {
   top: 0;
   left: 0;
   z-index: 998;
-  display: none;
 }
 
 .animate-img {
