@@ -43,7 +43,10 @@
             <div class="map-chart">
               <dr-site-map></dr-site-map>
             </div>
-            <div class="center-drill-module text-gradient">
+            <div
+              class="center-drill-module text-gradient"
+              @click="isShow = true"
+            >
               >>> 应用演练模块
             </div>
           </div>
@@ -63,6 +66,7 @@
           </div>
         </div>
       </div>
+      <alertAlarm :show="isShow" @close="isShow = false"></alertAlarm>
     </div>
   </div>
 </template>
@@ -73,6 +77,7 @@ import syncLink from './components/syncLink.vue'
 import alarmOverview from './components/alarmOverview.vue'
 import alarmChart from './components/alarmChart.vue'
 import drSiteMap from './components/drSiteMap.vue'
+import alertAlarm from './components/alertAlarm.vue'
 export default {
   name: 'App',
   components: {
@@ -81,11 +86,13 @@ export default {
     alarmOverview,
     alarmChart,
     drSiteMap,
+    alertAlarm,
   },
   data() {
     return {
       YearMonthDay: '', //年月日数据
       HourMiniterSeconds: '', //时分秒数据
+      isShow: false,
     }
   },
   computed: {
@@ -105,6 +112,9 @@ export default {
     }, 1000)
   },
   methods: {
+    changeShow() {
+      this.isShow = true
+    },
     //获取年月日的方法
     getYearMonthDay() {
       const today = new Date()
