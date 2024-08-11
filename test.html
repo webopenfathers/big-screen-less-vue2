@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #111;
+  }
+
+  .scroll-container {
+    /* 确保容器能够滚动，并隐藏溢出的内容 */
+    overflow: hidden;
+    width: 100px;
+    /* 定义容器的高度 */
+  }
+
+  .scroll-list {
+    display: flex;
+    position: relative;
+    height: 100%;
+    animation: scroll 5s linear infinite;
+    /* 动画名称、时长、速度曲线和循环次数 */
+  }
+
+  /* 定义滚动动画 */
+  @keyframes scroll {
+    0% {
+      transform: translate(-100%);
+    }
+
+    100% {
+      transform: translate(0);
+      /* 移动高度等于列表自身高度的负值，达到循环滚动的效果 */
+    }
+  }
+
+  /* 设置列表项样式，这里可以根据需要调整 */
+  .scroll-list li {
+    height: 50px;
+    /* 示例中每个列表项的高度 */
+    list-style: none;
+    padding: 10px;
+    color: #fff;
+  }
+</style>
+
+<body>
+  <div class="scroll-container">
+    <ul class="scroll-list">
+      <li>></li>
+      <li>></li>
+      <!-- 重复列表项以覆盖滚动间隙 -->
+      <li>></li>
+      <li>></li>
+      <li>></li>
+      <li>></li>
+    </ul>
+  </div>
+</body>
+
+</html>

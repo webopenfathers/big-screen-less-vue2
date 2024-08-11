@@ -24,6 +24,9 @@
     }
 
     .glow-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
       width: 240px;
       height: 72px;
@@ -31,9 +34,8 @@
       border-radius: 4px;
       background: transparent;
       color: var(--btn-color);
-      font-size: 32px;
+      font-size: 18px;
       font-weight: 700;
-      text-align: center;
       line-height: 72px;
       cursor: pointer;
       overflow: hidden;
@@ -143,13 +145,71 @@
         bottom: 100%;
       }
     }
+
+    /* ----------- */
+    .container {
+      position: relative;
+      display: flex;
+      width: 70px;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+    }
+
+    .container div {
+      white-space: nowrap;
+      animation: animate var(--t) linear infinite;
+    }
+
+    .container div:nth-child(2) {
+      animation: animate2 var(--t) linear infinite;
+      animation-delay: calc(var(--t) / -2);
+    }
+
+    @keyframes animate {
+      from {
+        transform: translate(-100%);
+      }
+
+      to {
+        transform: translate(100%);
+      }
+    }
+
+    @keyframes animate2 {
+      from {
+        transform: translate(-200%);
+      }
+
+      to {
+        transform: translate(0);
+      }
+    }
+
+    .container div span {
+      display: inline-flex;
+      color: #fff;
+      margin: 2px;
+      /* letter-spacing: .2em; */
+    }
   </style>
 </head>
 
 <body>
   <div class="button-container">
     <button class="glow-button" onclick="handleClick()" style="--btn-color: #2af598;">
-      >>> 炫酷按钮
+      <div class="container" style="--t:4s;">
+        <div>
+          <span>></span>
+          <span>></span>
+          <span>></span>
+        </div>
+        <div>
+          <span>></span>
+          <span>></span>
+          <span>></span>
+        </div>
+      </div>
+      <div>炫酷按钮</div>
       <div class="border-lines">
         <span class="line top"></span>
         <span class="line right"></span>

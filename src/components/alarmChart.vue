@@ -1,25 +1,14 @@
 <template>
-  <div id="scroll-container" class="scroll-container">
-    <div class="scroll-content">
-      <!-- 数据内容 -->
-      <p>Item 1</p>
-      <p>Item 2</p>
-      <p>Item 3</p>
-      <p>Item 1</p>
-      <p>Item 2</p>
-      <p>Item 3</p>
-      <p>Item 1</p>
-      <p>Item 2</p>
-      <p>Item 3</p>
-      <p>Item 1</p>
-      <p>Item 2</p>
-      <p>Item 3</p>
-      <p>Item 1</p>
-      <p>Item 2</p>
-      <p>Item 3</p>
-    </div>
-
-    <button @click="$router.push()">调换列表动画</button>
+  <div
+    class="contnet"
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    "
+  >
+    <div class="btn">>>>切换决策</div>
   </div>
 </template>
 <script>
@@ -92,5 +81,15 @@ export default {
 
 .scroll-container::-webkit-scrollbar {
   width: 0;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #43cccb;
+  height: 50px;
+  width: 200px;
+  background: linear-gradient(to right, #f8fbf1, #23445f);
 }
 </style>
