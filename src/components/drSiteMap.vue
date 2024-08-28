@@ -70,7 +70,7 @@ export default {
             type: 'effectScatter',
             coordinateSystem: 'geo',
             symbolSize: function (rawValue, params) {
-              console.log(params, 'params')
+              // console.log(params, 'params')
 
               params.symbolSize = size[params.dataIndex]
               // console.log(params, 'params')
@@ -88,10 +88,12 @@ export default {
             },
             hoverAnimation: false,
             itemStyle: {
-              normal: {
-                color: '#1DE9B6',
-                shadowBlur: 10,
-                shadowColor: '#1DE9B6',
+              color: (params) => {
+                console.log(params, 'params')
+                if (params.value[2] >= 200) {
+                  return 'red'
+                }
+                return 'blue'
               },
             },
             zlevel: 1,
