@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    const getSize = () => {
+      const arr = [3, 3, 6];
+      const uniqueArr = Array.from(new Set(arr));
+      // 三个值都不一样，则三个圆环大小都不一样
+      if (uniqueArr.length === 3) {
+        return [20, 30, 40]
+      }
+
+      // 两个值一样，则后两个圆环大小一样
+      if (uniqueArr.length === 2) {
+        return [20, 40, 40]
+      }
+
+      // 三个值都一样，则圆环大小一样
+      if (uniqueArr.length === 1) {
+        return [20, 20, 20]
+      }
+    }
+    getSize()
+  </script>
+</body>
+
+</html>
