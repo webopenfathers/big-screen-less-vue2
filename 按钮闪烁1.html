@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  html,
+  body {
+    background-color: #000;
+  }
+
+  @keyframes blink {
+    0% {
+      background-color: #fff;
+    }
+
+    100% {
+      background-color: red;
+    }
+  }
+
+  .button-blink {
+    border: 1px solid #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    animation: blink 1s infinite;
+    /* 控制闪烁速度和次数 */
+  }
+</style>
+
+<body>
+  <button class="button-blink">按钮</button>
+</body>
+
+</html>
