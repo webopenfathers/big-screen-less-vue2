@@ -22,7 +22,7 @@ export default {
       let scatterData = [
         { name: '贵阳', value: [106.42, 26.35, 100] },
         { name: '乌兰察布', value: [113.1384, 40.9923, 200] },
-        { name: '东莞', value: [113.8009, 22.9589, 400] },
+        { name: '东莞', value: [113.8009, 22.9589, 100] },
       ]
       console.log(scatterData, 'scatterData')
       let size = this.getSize(scatterData)
@@ -109,6 +109,7 @@ export default {
     },
 
     getSize(data) {
+      let size = []
       // 1.排序
       const seriesData = data.sort((a, b) => a.value[2] - b.value[2])
       // 2.获取值
@@ -125,22 +126,23 @@ export default {
 
       // 两个值一样，则后两个圆环大小一样
       if (uniqueArr.length === 2) {
-        if (val[0] === val[2]) {
-          // 例如：[100, 200, 100]
-          return [20, 40, 20]
-        } else if (val[1] > val[0]) {
+        if (val[1] > val[0]) {
+          console.log(1)
           // 例如：[100, 200, 200]
-          return [20, 40, 40]
+          size = [20, 40, 40]
         } else {
+          console.log(2)
           // 例如：[100, 100, 200]
-          return [20, 20, 40]
+          size = [20, 20, 40]
         }
       }
 
       // 三个值都一样，则圆环大小一样
       if (uniqueArr.length === 1) {
-        return [40, 40, 40]
+        size = [40, 40, 40]
       }
+
+      return size
     },
   },
 }
